@@ -1,0 +1,66 @@
+#Section 10.2
+##10.1 If a class contains only private data fields and no set methods, is the class immutable?
+The class must also contain no get methods that would return a reference to an object for it to be immutable.
+
+##10.2 If all the data fields in a class are private and primitive type, and the class contains no set methods, is the class immutable?
+Yes
+
+##10.3 Is the following class immutable?
+Yes, private data fields and no set methods.
+public class A {
+    private int[] values;
+
+    public int[] getValues() {
+        return values;
+    }
+}
+
+##10.4 If you redefine the Loan class in Listing 10.2 without set methods, is the class immutable?
+No, the Date method changes.
+
+#Section 10.3
+##10.5 What is the output?
+public class Main {
+
+        private static int i = 0;
+        private static int j = 0;
+
+    public static void main(String[] args) {
+        int i = 2;
+        int k = 3;
+
+        {
+            int j =3;
+            System.out.println("i + j is " + i + j);
+        }
+        k = i + j;
+        System.out.println("k is " + k);
+        System.out.println("j is " + j);
+    }
+}
+// output
+i + j is 23
+k is 2
+j is 0
+
+#Section 10.4
+##10.6 Describe the role of the this keyword.
+‘this’ is a reference variable that refers to the current object.
+
+##What is wrong in the following code?
+public class C {
+    private int p;
+
+    public C() {
+        this(0)
+        System.out.println("C's no-arg constructor invoked");
+    }
+
+    public C(int p) {
+        this.p = p;
+    }
+
+    public void setP(int p) {
+        this.p = p;
+    }
+}

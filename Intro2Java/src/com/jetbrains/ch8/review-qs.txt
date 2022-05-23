@@ -1,0 +1,16 @@
+Section 8.2-8.5
+8.1 Describe the relationship between an object and its defining class. How do you define a class? How do you declare an object reference variable? How do you create an object?
+How do you declare and create an object in one statement.
+A class is a template that defines the properties and behaviours for objects. An object is an instance of a class. Objects are accessed via the
+object's reference variables, which contain references to the objects.
+Object reference variable is declared using ClassName variableName;
+Create an object using ClassName variableName = new ClassName();
+
+8.2 What are the differences between constructors and methods?
+A constructor has three characteristics; it is invoked to create an object using the new operator, they play the role of initializing objects.
+A constructor must have the same name as the class itself and it does not have a return type - not even void. A class has a default constructor if one is not defined.
+A method is a function that is created within a class. Calling it executes the code inside the method. A method can be reused. A method has access to all of the objects properties.
+
+8.3 Is an array an object or a primitive type value? Can an array contain elements of an object type as well as a primitive type? Describe the default value for the elements of an array.
+An array is an object that is is created using new operator and has several methods. An array can contain elements of an object type as well as a primitive types. The default value for the
+elements of an array is 0 for numeric, false for boolean, '\u0000' for char, null for object element type.

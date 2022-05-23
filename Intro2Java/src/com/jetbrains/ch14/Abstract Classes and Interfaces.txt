@@ -1,0 +1,17 @@
+- Abstract classes are like regular classes with data and methods, but you cannot create instances of abstract classes using the new operator.
+- An abstract method cannot be contained in a nonabstract class. If a subclass of an abstract superclass does not implement all the inherited abstract methods of the super-class,
+the subclass must be defined abstract.
+- A class that contains abstract methods must be abstract. However, it is possible to define an abstract class that contains no abstract methods.
+- A subclass can be abstract even if its superclass is concrete.
+- An interface is a classlike construct that contains only constants and abstract methods. In many ways, an interface is similar to an abstract class, but an abstract class can contain constants
+and abstract methods as well as variables and concrete methods.
+- An interface is treated like a special class in Java. Each interface is compiled into a seperate bytecode file, just like a regular class.
+- The java.lang.Comparable interface defines the compareTo method. Many classes in the Java library implement Comparable.
+- The java.lang.Cloneable interface is a marker interface. An object of the class that implements the Cloneable interface is cloneable.
+- A class can extend only one superclass but can implement one or more interfaces.
+- An interface can extend one or more interfaces.
+- Many Java methods require the use of objects as arguments. Java offers a convenient way to incorporate, or wrap, a primitive data type into an object (eg. wrapping int into the Integer class,
+and wrapping double into the Double class). The corresponding class is called a wrapper class. By using a wrapper object instead of primitive data type variable, you can take advantage of generic programming.
+- Java can automatically convert a primitive type value to its corresponding wrapper object in the context and vice versa.
+
+

@@ -1,0 +1,226 @@
+#4.1 Analyze the following code. Is count < 100 always true, always false, or sometimes true or sometimes false at Point A, Point B and Point C?
+
+int count = 0;
+while(count < 100) {
+    //Point A - always true
+    System.out.println("Welcome to Java!\n");
+    count++;
+    //Point B - sometimes true
+}
+//Point C - always false
+
+#4.2 What is wrong if guess is initialized to 0 in line 11 in Listing 4.2?
+the guess needs to be outside the 0-100 range so that the while loop is always initially true, otherwise exits the program if the random number is 0.
+
+#4.3 How many times is the following loop body repeated? What is the printout of the loop?
+(a)
+int i = 1;
+while (i < 10)
+    if (i % 2 == 0)
+        System.out.println(i);
+- infinite loop, doesn't printout
+
+(b)
+int i = 1;
+while (i < 10)
+    if (i % 2 == 0)
+        System.out.println(i++);
+- infinite loop, doesn't printout
+
+(c)
+int i = 1;
+while (i < 10) {
+    if ((i++) % 2 == 0) {
+        System.out.println(i);
+    }
+}
+- loops 9 times, prints out (2,4,6,8,10)
+
+#4.4 What are the differences between a while loop and a do-while loop? Convert the following while loop into a do-while loop.
+A while loop, the condition is checked before the loop is executed. A do-while loop, the condition is checked after the loop is executed so it will execute at least once.
+
+int sum = 0;
+int number = input.nextInt();
+do {
+   if(number == 0){
+       sum += number;
+       number = input.nextInt();
+    }
+} while (number != 0);
+
+#4.5 Do the following two loops result in the same value in sum?
+(a)
+for (int i =0; i < 10; ++i) {
+    sum += i;
+}
+//45
+
+(b)
+for (int i = 0; i < 10; i++) {
+    sum +=i;
+}
+//45
+
+#4.6 What are the three parts of a for loop control? Write a for loop that prints the numbers from 1 to 100.
+initialization; condition; action after each iteration;
+for(int i = 1; i < 101; i++) {
+    System.out.println(i);
+}
+
+#4.7 Suppose the input is 2 3 4 5 0. What is the output of the following code?
+import java.util.Scanner;
+public class Test {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int number = input.nextInt();
+        int max = number;
+
+        while (number != 0) {
+            number = input.nextInt();
+            if(number > max)
+                max = number;
+        }
+
+        System.out.println("max is " + max);
+        System.out.println("number " + number);
+    }
+}
+
+//max is 5
+//number is 0
+
+#4.8 Suppose the input is 2 3 4 5 0. What is the output of the following code?
+import java.util.Scanner;
+
+public class Test {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int number, sum = 0, count;
+
+        for (count = 0; count < 5; count++) {
+            number = input.nextInt();
+             sum += number;
+        }
+
+        System.out.println("sum is " + sum);
+        System.out.println("count is " + count);
+     }
+}
+//sum is 14.
+//count is 5.
+
+#4.9 Suppose the input is 2 3 4 5 0. What is the output of the following code?
+import java.util.Scanner;
+
+public class Test {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int number, max;
+        number = input.nextInt();
+        max = number;
+
+        do {
+        number = input.nextInt();
+        if (number > max)
+        max = number;
+        } while (number != 0);
+
+        System.out.println("max is " + max);
+        System.out.println("number " + number);
+    }
+}
+//max is 5
+//number is 5
+
+#4.10 What does the following statement do?
+for loop. it loops through the condition and it does something when each time condition is true. when the condition reaches a false, it exits the loop.
+
+#4.11 If a variable is declared in the for loop control, can it be used after the loop exits?
+no
+
+#4.12 Can you convert a for loop to a while loop? List the advantages of using for loops
+yes, for loop reduces the amount of code written. its simpler and more readable.
+
+#4.13 Covert the following for loop statement to a while loop and to a do-while loop:
+
+long sum = 0;
+for(int i = 0; i <= 1000; i++)
+sum = sum + i;
+//
+long sum = 0;
+int i = 0;
+while (i <= 1000) {
+ i++, sum += i;
+}
+//
+    long sum = 0;
+    int i = 0;
+    do {
+    sum += i, i++,
+    } while (i <= 1000);
+    //
+
+#4.15 What is the keyword break for? What is the keyword continue for? Will the following program terminate? If so, give the output.
+break is used to come out of the loop when i equals 4.
+continue is used to skip one iteration when i equals 4.
+
+(a)
+int balance = 1000;
+while (true) {
+    if (balance < 9)
+        break;
+    balance = balance - 9;
+}
+System.out.println("Balance is " + balance);
+//while statement is false. no output.
+
+(b)
+int balance = 1000;
+while (true) {
+    if (balance < 9)
+        continue;
+    balance = balance - 9;
+}
+//while statement is false. no output.
+
+#4.16 Can you always convert a while loop into a for loop? Convert the following while loop into a for loop.
+
+int i = 1;
+int sum = 0;
+while (sum < 10000) {
+sum = sum + i;
+i++;
+}
+//
+
+for(int sum = 0, i = 1; sum < 10000; i++, sum += i) 
+
+#4.17 The for loop(a) is converted into the while loop(b). What is wrong? Correct it.
+(a)
+for (int i = 0; i < 4; i++) {
+if(i % 3 == 0) continue;
+sum += i;
+}
+
+(b)
+int i = 0;
+while (i < 4) {
+if(i % 3 == 0) continue;
+sum += i;
+i++;
+}
+
+#4.18
+public class TestBreak {
+public static void main(String[] args( {
+int sum = 0;
+int number = 0;
+
+while (number < 20) {
+number ++;
+sum += number;
+
+}

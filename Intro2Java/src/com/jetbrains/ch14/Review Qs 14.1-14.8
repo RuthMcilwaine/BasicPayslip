@@ -1,0 +1,29 @@
+#14.1 Which of the following classes definitions defines a legal abstract class?
+e) abstract class A {
+    abstract void unfinished();
+    }
+
+f) abstract class A {
+    abstract int unfinished();
+    }
+
+#14.2 The getArea() and getPerimeter() methods may be removed from the GeometricObject class. What are the benefits of defining getArea() and getPerimeter() as abstract methods in the GeometricObject class?
+So that all subclasses can also access the getArea() and getPerimeter().
+
+#14.3 An abstract class can be used just like a nonabstract class except that you cannot use the new operator to create an instance from the abstract class. True
+
+#14.4 Which of the following is a correct interface?
+d) interface A {
+    void print();
+    }
+
+#14.5 If a class implements Comparable, the object of the class can invoke the compareTo method. True
+
+#14.6 Two max methods are defined in 14.5. Explain why the max with the signature max(Comparable, Comparable) is better than the one with the signature max(Object, Object).
+comparable1 is declared as a comparable in the first example, so no casting is needed.
+
+#14.7 You can define the compareTo method in a class without implementing the Comparable interface. What are the benefits of implementing the Comparable interface?
+The benefit of implementing the interface is that some methods specifically require object that implements the Comparable interface. It gives them a guarantee that
+the object you're passing has a compareTo method with the correct signature.
+
+#14.8 If a class implements java.awt.event.ActionListener, the object of the class can invoke the actionPerformed method. True

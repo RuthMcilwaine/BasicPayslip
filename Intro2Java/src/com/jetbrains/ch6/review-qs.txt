@@ -1,0 +1,73 @@
+# 6.1 How do you declare and create an array?
+int[] array = new int[arraysize];
+
+#6.2 How do you access elements of an array?
+array[index];
+
+#6.3 Is memory allocated for an array when it is declared? // no
+When is the memory allocated for an array? // at initializing
+What is the printout of the following code? //
+int x =30
+int[] numbers = new int[x]
+x=60;
+System.out.println("x is " + x);
+System.out.println("The size of numbers is " + numbers.length);
+
+#6.4 Indicate true of false for the following statements;
+Every element in an array has the same type.  //T
+The array size is fixed after it is declared.  //F
+The array size is fixed after it is created. //T
+The elements in an array must be of primitive data type. //F
+
+#6.5 Which of the following statements are valid array declarations?
+int i = new int(30); //not an array
+double d[] = new double[30]; //true
+char[] r = new char(1..30)  //not a char
+int i[] = (3, 4, 3, 2);  //()?
+float f[] = {2.3, 4.5, 6.6}; //true
+char[] c = new char(); //need to have char inside brackets
+
+#6.6 What is the array index type? //int
+What is the lowest index? //[0]
+What is the representation of the third element in an array named a? //[2]
+
+#6.7 Write statements to do the following:
+a. Create an array to hold 10 double values.
+    double[] arr = new double[10];
+b.Assign value 5.5 to the last element in the array.
+    arr[9] = 5.5;
+    arr[arr.length-1] = 5.5;
+c. Display the sum of the first two elements.
+    arr[0] + arr[1];
+d. Write a loop that computes the sum of all elements in the array.
+    int total = 0;
+    for(int i = 0; i < arr.length; i++) {
+       total += arr[i];
+    }
+e.Write a loop that finds the minimum element in the array.
+     int total = 0;
+     for(int i = 0; i < arr.length; i++) {
+        if(arr[i] < min)
+        min = arr[i]
+     }
+f.Randomly generate an index and display the element of this index in the array.
+
+    int index = (int) (Math.random() * arr.length);
+    int element = array[index];
+
+
+g.Use an array initializer to create another array with initial values
+    double[] arr = {3.5, 5.5, 4.52, 5.6};
+
+#6.8 What happens when your program attempts to access an array element with an invalid index?
+
+#6.9 Identify and fix the errors in the following code:
+
+public class Test {
+    public static void main(String[] args) {
+    double[] r = double[100];
+    for(int i = 0; i < r.length; i++){
+        r[i] = (Math.random() * 100);
+    }
+    }
+}

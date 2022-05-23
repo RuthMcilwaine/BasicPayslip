@@ -1,0 +1,116 @@
+6.2.1 Declaring Array Variables
+elementType[] arrayRefVar;
+double[] myList;
+
+6.2.2 Creating Arrays
+elementType arrayRefVar = new elementType[arraySize];
+double[] myList = new double[10];
+
+-To assign values to the elements, use the syntax:
+arrayRefVar[index] = value;
+
+6.2.3 The Array size is found using
+arrayRefVar.length
+
+6.2.4 Array Indexed Variables
+Array indices range from 0 to arrayRefVar.length-1
+myList[2] = myList[0] + myList[1];
+
+6.2.5 Array Initializers
+in java, one statement can declare an array, create an array and initialize.
+elementType[] arrayRefVar = {value0, value1, value2};
+double[] myList = {1.9, 2.9, 3.4};
+
+6.2.6 Processing Arrays (for loop)
+double[] myList = new double[10];
+
+-the loop initializes the array with user input values
+    System.out.print("Enter " + myList.length + " values: ");
+    for (int i = 0; i < myList.length; i++)
+        myList[i] = input.nextDouble();
+
+-the loop initializes the array with random values between 0.0 and 100.0
+    for(int i = 0; i < myList.length; i++) {
+    myList[i] = Math.random() * 100;
+    }
+
+-displaying arrays using a loop to print each element
+    for(int i = 0; i < myList.length; i++) {
+    System.out.print(myList[i] + " ");
+    }
+
+-print character array
+    char[] city = {'D', 'a', 'l', 'l', 'a', 's'};
+    System.out.println(city);
+
+-Sum of all elements. Use a variable named total to store the sum. Initially total is 0. Add each element in the array to total using a loop
+    double total = 0;
+    for(int i = 0; i < myList.length; i++) {
+        total += myList[i];
+    }
+
+-Finding the largest element. Use a variable named max to store the largest element. Initially max in myList[0]. To find the largest element in the array myList,
+compare each element with max, and update max if the element is greater than max.
+    for(int i = 0; i < myList.length; i++) {
+        if (myList[i] > max) max = myList[i];
+    }
+
+-Finding the smallest index of the largest element. If an array has more than one largest element, find the smallest index of such an element. Use a variable named max
+to store the largest element and a variable named indexOfMax to denote the index of the largest element. Initially max is myList[0], and indexOfMax is 0. Compare each
+element in myList with max, and update max and indexOfMax if the element is greater than max.
+    double max = myList[0];
+    int indexOfMax = 0;
+    for (int i = 1; i < myList.length; i++) {
+        if(myList[i] > max) {
+            max = myList[i];
+            indexOfMax = i;
+        }
+    }
+
+-Random shuffling. for each element myList[i], randomly generate an index j and swap myList[i] with myList[j].
+    for(int i = 0; i < myList.length; i++) {
+    //generate an index j randomly
+    int index = (int) (Math.random() * myList.length);
+    double temp = myList[i];
+    myList[i] = myList[index]
+    myList[index] = temp
+    }
+
+6.2.7 For-each Loops. the following code displays all the elements in the array myList.
+    for(double u: myList) {
+   // for each element u in myList do the following
+    System.out.println(u);
+    }
+
+public static void main(String[] args) {
+        System.out.println("Array of primitives");
+        int[] ints ={9, 6, 3};
+        Arrays.sort(ints);
+        for (int i = 0; i < ints.length; i++) {
+            System.out.println(ints[i]);
+        }
+
+        System.out.println("Array of strings");
+        String[] strings = {"Red", "Green", "Blue"};
+        Arrays.sort(strings);
+        for (String colour : strings) {
+            System.out.println(colour);
+        }
+
+        System.out.println("Setting an initial size");
+        int[] sized = new int[10];
+        for (int i = 0; i < sized.length; i++) {
+            sized[i] = i * 100;
+        }
+        for(int value: sized) {
+            System.out.println(value);
+        }
+
+        System.out.println("Copying an array"); //output copied array starting at 500
+        int[] copied = new int[5];
+        System.arraycopy(sized, 5, copied, 0, 5);
+        //copy the sized array from position 5, destination array is copied, the range is starting at 0 going to 5
+        for(int value:copied) {
+            System.out.println(value);
+        }
+        }

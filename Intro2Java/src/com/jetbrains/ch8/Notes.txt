@@ -1,0 +1,23 @@
+- A class is a template for objects. It defines the properties of objects and provides constructors for creating objects and methods for manipulating them.
+
+- A class is also a data type. You can use it to declare object reference variables. An object reference variable that appears to hold an object actually contains a reference to that object.
+Strictly speaking, an object reference variable and an object are different, but most of the time the distinction can be ignored.
+
+- An object is an instance of a class. You use the new operator to create an object, and the dot (.) operator to access members of that object through its reference variable.
+
+- An instance variable or method belongs to an instance of a class. Its use is associated with individual instances. A static variable is a variable shared by all instances of the same class. A static
+method is a method that can be invoked without using instances.
+
+- Every instance of a class can access the class's static variable and methods. However, its better to invoke static variables and methods using ClassName.variable and ClassName.method.
+
+Static vs instance methods
+I have a method named getInput that's defined in the class InputHelper. I call the method from the class itself. I see that the method has the keyword static, and that's what allows the method to be called in this way, but
+An instance method is a method that belongs to an instance of the class rather than to the class itself.
+Static methods are marked with the keyword static. Instance methods simply don't have that keyword. So if I delete the keyword static, this method now must be called from an instance of the InputHelper class, not from the class.
+It's a non-static or an instance method. I'll create an instance of the InputHelper class, and I'll call it simply helper. Instantiate it with new, and then use the no arguments constructor method for this class.
+Now there is a helper object, and instead of calling getInput from the class, call it from the object.
+InputHelper helper = new InputHelper();
+
+There's one basic side effect of using instance methods instead of static methods. You have to create an object, and that takes up a bit of memory.
+If you can accomplish your purpose with static methods, it's a tiny bit better for performance, but there are many cases when the complexity of what you're trying to accomplish requires the use of objects and
+instance methods instead. As soon as you start using instance methods they have access to data that's stored within the class.
